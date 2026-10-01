@@ -1,0 +1,6 @@
+$ python3 ../../tools/compliance_scan.py --file examples/input/formal.txt --platform 抖音
+  目标平台：抖音　词表版本：2026.09-baseline
+  结论：放行
+  AI 味评分：20/100
+  命中总数：0
+  ↑ 原子技能 colloquial-rewrite 的确定性脚本

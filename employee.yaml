@@ -1,0 +1,85 @@
+apiVersion: digital-employee/v1
+kind: DigitalEmployee
+metadata:
+  id: de_creator_script_writer
+  name: 短视频脚本创作师
+  alias: null
+  repo: de-creator-script-writer
+  card_no: 5.4-2
+  group: creator
+  group_label: 自媒体从业者
+  phase: P0 首发
+  complexity: M：WF1-WF3 为 S 级提示词，WF4 检测闸门需模型/API 集成（M），总估 8-10 人日
+  score: 22
+  price: ¥30-80/月（据 R2 调研）
+  channels:
+  - GitHub（必备基础渠道）
+  - 抖音
+  - 小红书
+  - Coze扣子商店
+  - 豆包工作
+  - 腾讯WorkBuddy Skill市场
+  license: Proprietary
+  version: 1.0.0
+spec:
+  positioning: 从选题到过检成稿的脚本流水线，写得快且不被限流
+  users: 短视频/直播创作者（亿级账号池），日更/隔日更口播类作者
+  boundary: 做：选题转脚本、口播改写、分镜清单、AI 痕迹自检与降 AI 味；不做：拍摄剪辑（物理环节）、真人出镜替代、不生成违规/夸大宣传内容
+  kpi: 单脚本产出时长 ≤15 分钟（原 3-6h 创作环节中的写作段）；AI 检测通过率 ≥90%；成片采用率 ≥60%
+  roi_summary: 日更场景月省约 70h，折 ¥1700-2800，ROI >20 倍
+  demand_refs:
+  - D01
+  - D26
+  demand_support: 充分
+  demand_evidence: 中
+runtime:
+  system_prompt: persona/system-prompt.md
+  boundary: persona/boundary.md
+  kpi: persona/kpi.md
+deliverables:
+  skills: []
+  workflows:
+  - slug: wf-creator-script-topic-to-script
+    name: 选题转脚本
+    path: workflows/wf-creator-script-topic-to-script
+    version: 1.0.0
+    phase: P0
+    calls:
+    - script-structure
+    - hook-copy
+  - slug: wf-creator-script-colloquial
+    name: 口播稿口语化改写
+    path: workflows/wf-creator-script-colloquial
+    version: 1.0.0
+    phase: P0
+    calls:
+    - colloquial-rewrite
+    - persona-tone-lib
+  - slug: wf-creator-script-storyboard
+    name: 分镜与拍摄清单
+    path: workflows/wf-creator-script-storyboard
+    version: 1.0.0
+    phase: P1
+    calls:
+    - script-structure
+  - slug: wf-creator-script-ai-gate
+    name: AI 痕迹检测与降 AI 味
+    path: workflows/wf-creator-script-ai-gate
+    version: 1.0.0
+    phase: P0
+    calls:
+    - compliance-word-scan
+    - colloquial-rewrite
+  knowledge_base: kb/
+  connectors: connectors/bindings.yaml
+external_dependencies:
+- repo: agent-skills-core
+  version: 1.0.0
+  skills:
+  - colloquial-rewrite
+  - compliance-word-scan
+  - hook-copy
+  - persona-tone-lib
+  - script-structure
+  resolution: external
+spec_only_dependencies: []

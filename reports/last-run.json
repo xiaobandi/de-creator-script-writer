@@ -1,0 +1,36 @@
+{
+  "repo": "de-creator-script-writer",
+  "kind": "employee",
+  "run_at": "2026-09-30T23:54:11+08:00",
+  "cases": 147,
+  "passed": 147,
+  "failed": 0,
+  "by_suite": {
+    "structure": {
+      "total": 40,
+      "failed": 0
+    },
+    "contract": {
+      "total": 23,
+      "failed": 0
+    },
+    "scenario": {
+      "total": 62,
+      "failed": 0
+    },
+    "script": {
+      "total": 6,
+      "failed": 0
+    },
+    "doc": {
+      "total": 3,
+      "failed": 0
+    },
+    "compliance": {
+      "total": 13,
+      "failed": 0
+    }
+  },
+  "skipped": [],
+  "failures": []
+}

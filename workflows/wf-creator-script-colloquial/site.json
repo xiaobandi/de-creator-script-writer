@@ -1,0 +1,15 @@
+{
+  "name": "wf-creator-script-colloquial",
+  "title": "口播稿口语化改写",
+  "kind": "workflow",
+  "owner": "de-creator-script-writer",
+  "complexity": "S",
+  "phase": "P0",
+  "one_liner": "书面初稿→人设口语→断句/语气词适配",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}

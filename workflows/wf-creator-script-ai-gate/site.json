@@ -1,0 +1,15 @@
+{
+  "name": "wf-creator-script-ai-gate",
+  "title": "AI 痕迹检测与降 AI 味",
+  "kind": "workflow",
+  "owner": "de-creator-script-writer",
+  "complexity": "M",
+  "phase": "P0",
+  "one_liner": "AI 率自检→不达标自动改写→敏感词扫描→过检出稿",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}

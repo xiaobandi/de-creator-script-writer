@@ -1,60 +1,66 @@
 ---
-name: wf-creator-script-colloquial
+name: wf-creator-script-storyboard
 description: >-
-  短视频脚本创作师 的「口播稿口语化改写」工作流：书面初稿→人设口语→断句/语气词适配。触发方式：事件（WF1 后自动）。
-  当用户要完成「口播稿口语化改写」这件事、或触发了上述条件时使用。
+  短视频脚本创作师 的「分镜与拍摄清单」工作流：脚本→镜头拆分→道具/场地/时长清单。触发方式：人工（按需）。
+  当用户要完成「分镜与拍摄清单」这件事、或触发了上述条件时使用。
 license: Proprietary
+compatibility: >-
+  需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
+  跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
 metadata:
   author: PLATFORM
   version: "1.0.0"
   standard: agent-skills/v1
+  library: agent-skills-library
   layer: L2-workflow
   owner: de_creator_script_writer
+  repo: de-creator-script-writer
+  visibility: private_to_employee
+  delivery: employee
   complexity: S
-  phase: P0
+  phase: P1
   source: library
 ---
 
-# 口播稿口语化改写
+# 分镜与拍摄清单
 
-> 归属：**短视频脚本创作师**（`de-creator-script-writer`）　触发：事件（WF1 后自动）　
-> 复杂度 S　阶段 P0
+> 归属：**短视频脚本创作师**（`de-creator-script-writer`）　触发：人工（按需）　
+> 复杂度 S　阶段 P1
 
 ## 一、这条工作流解决什么
 
-书面初稿→人设口语→断句/语气词适配
+脚本→镜头拆分→道具/场地/时长清单
 
-**业务收益**：含于 WF1 工时内，核心是人设一致性带来的返工归零
+**业务收益**：拍摄准备 0.5-1h→10min，月省约 8h≈¥240
 
 ## 二、调用的 SKILL（必填列，逐条锁定版本）
 
 | 技能名 | slug | 来源仓 | 版本 |
 |---|---|---|---|
-| `口语化改写` | `colloquial-rewrite` | core | v1.0.0 |
-| `人设语气库` | `persona-tone-lib` | core | v1.0.0 |
+| `脚本结构生成` | `script-structure` | core | v1.0.0 |
 
 > 公共技能来自 `agent-skills-core@1.0.0`，本仓库只做外部依赖引用，
 > **不内联复制**其正文——这是三层仓库体系的硬规则，避免同一能力多份副本各自漂移。
 
 ## 三、执行步骤（每步四要素齐备）
 
-### 步骤 1：书面初稿
+### 步骤 1：脚本
 
-- **做**：书面初稿
+- **做**：脚本
 - **输入来源**：用户提供的原始材料（工作流第 1 步没有「上一步」）/ 本员工知识库 `kb/` / 连接器只读数据；三者皆空时必须停在 G1 闸门
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 
-### 步骤 2：人设口语
+### 步骤 2：镜头拆分
 
-- **做**：人设口语
+- **做**：镜头拆分
 - **输入来源**：步骤 1 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 
-### 步骤 3：断句/语气词适配
+### 步骤 3：道具/场地/时长清单
 
-- **做**：断句/语气词适配
+- **做**：道具/场地/时长清单
 - **输入来源**：步骤 2 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式

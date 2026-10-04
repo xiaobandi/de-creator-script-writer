@@ -1,0 +1,15 @@
+{
+  "name": "wf-creator-script-topic-to-script",
+  "title": "选题转脚本",
+  "kind": "workflow",
+  "owner": "de-creator-script-writer",
+  "complexity": "S",
+  "phase": "P0",
+  "one_liner": "选题→黄金 3 秒钩子→结构模板→初稿",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}

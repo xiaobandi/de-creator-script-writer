@@ -19,7 +19,7 @@ metadata:
   - Coze扣子商店
   - 豆包工作
   - 腾讯WorkBuddy Skill市场
-  license: Proprietary
+  license: Apache-2.0
   version: 1.0.0
 spec:
   positioning: 从选题到过检成稿的脚本流水线，写得快且不被限流

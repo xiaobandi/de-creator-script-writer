@@ -3,7 +3,7 @@ name: wf-creator-script-ai-gate
 description: >-
   短视频脚本创作师 的「AI 痕迹检测与降 AI 味」工作流：AI 率自检→不达标自动改写→敏感词扫描→过检出稿。触发方式：事件（交付前强制闸门）。
   当用户要完成「AI 痕迹检测与降 AI 味」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
